@@ -140,6 +140,7 @@ export default function GoogleLensPanel({
                   alt=""
                   className="object-cover rounded-md bg-gray-100"
                   style={{ width: thumbnail.width, height: thumbnail.height }}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
                 <p className="text-xs font-medium text-gray-900 line-clamp-2">{result.title}</p>
                 <p className="text-xs text-green-700 truncate w-full">{result.source}</p>
@@ -156,6 +157,7 @@ export default function GoogleLensPanel({
                   alt=""
                   className="object-cover rounded-md flex-shrink-0 bg-gray-100"
                   style={{ width: thumbnail.width, height: thumbnail.height }}
+                  onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
                 <div className="flex-1 min-w-0">
                   <p className="text-sm font-medium text-gray-900 line-clamp-2">{result.title}</p>
