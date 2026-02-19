@@ -62,9 +62,9 @@ export default function InterventionPage() {
             <h2 className="text-lg font-semibold text-gray-800 mb-3">{section.heading}</h2>
           )}
           {section.paragraphs.map((paragraph, pIdx) => (
-            <p key={pIdx} className="text-gray-600 mb-4 leading-relaxed">
-              {paragraph}
-            </p>
+            <p key={pIdx} className="text-gray-600 mb-4 leading-relaxed"
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
           {section.images && section.images.length > 0 && (
             <div className="space-y-4 my-4">
