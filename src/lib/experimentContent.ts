@@ -181,10 +181,10 @@ export const WELCOME_CONTENT = {
   zh: {
     researchOverview: '研究概述',
     researchDesc:
-      '感谢您对本研究的关注。我们正在研究人们如何感知和评估不同类型的图像。在本研究中，您将阅读一些背景信息，查看一系列图像，并回答相关问题。',
+      '感谢您对本研究的关注。我们正在研究人们如何评估视觉材料是否由AI生成。在本研究中，您将阅读一些背景信息，查看一系列图像，并回答相关问题。',
     whatToExpect: '研究流程',
     expectations: [
-      '预计时长：约10-15分钟',
+      '预计时长：约10分钟',
       '您将完成一份简短的背景问卷',
       '您将阅读一些说明材料',
       '您将查看并评估一系列图片',
@@ -252,7 +252,6 @@ const PRE_TEST_QUESTIONS_ZH: QuestionDef[] = [
     options: [
       { value: 'male', label: '男' },
       { value: 'female', label: '女' },
-      { value: 'non-binary', label: '非二元性别' },
       { value: 'prefer-not-to-say', label: '不愿透露' },
     ],
     required: true,
@@ -266,14 +265,14 @@ const PRE_TEST_QUESTIONS_ZH: QuestionDef[] = [
       { value: 'some-college', label: '大专' },
       { value: 'bachelors', label: '本科' },
       { value: 'masters', label: '硕士' },
-      { value: 'doctorate', label: '博士或专业学位' },
+      { value: 'doctorate', label: '博士及以上' },
     ],
     required: true,
   },
   {
     id: 'ai_tool_usage',
     type: 'radio',
-    label: '您是否使用过AI图像生成工具（如Midjourney、DALL-E、Stable Diffusion）？',
+    label: '您是否使用过AI图像生成功能（如豆包、元宝中的生图功能；Nanobanana；Midjourney）？',
     options: [
       { value: 'yes', label: '是' },
       { value: 'no', label: '否' },
@@ -292,7 +291,7 @@ const PRE_TEST_QUESTIONS_ZH: QuestionDef[] = [
   {
     id: 'self_assessed_ability',
     type: 'likert',
-    label: '您如何评价自己区分AI生成图像和真实照片的能力？',
+    label: '您如何评价自己区分AI生成图像和真实图像的能力？',
     likertMin: '非常差',
     likertMax: '非常好',
     likertCount: 5,
@@ -301,7 +300,7 @@ const PRE_TEST_QUESTIONS_ZH: QuestionDef[] = [
   {
     id: 'ai_exposure_freq',
     type: 'radio',
-    label: '您在日常生活中多久接触到AI生成的内容（图像、文字、视频）？',
+    label: '您在日常生活中接触到AI生成视觉内容的频率（图像、视频）？',
     options: [
       { value: 'never', label: '从不' },
       { value: 'rarely', label: '很少（每周不到一次）' },
@@ -407,9 +406,7 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
         paragraphs: [
           '近年来，人工智能在图像生成领域取得了显著进展。现代AI系统可以根据文字描述生成高度逼真的图像，而这在十年前几乎是不可能的。',
           '这些AI图像生成器通过学习数百万张现有图像中的模式来工作。通过"训练"过程，AI分析真实照片和艺术作品中的统计模式，学习理解光线、透视、纹理和构图等概念。',
-          'AI图像生成背后的技术经历了多种方法的演变。早期方法使用生成对抗网络（GAN），其中两个神经网络相互竞争——一个负责生成图像，另一个则尝试区分生成图像和真实图像。更新的方法使用扩散模型，将随机噪声逐步转化为连贯的图像。',
-          'AI生成的图像现已广泛应用于广告、娱乐、教育和艺术等领域。一些艺术家将AI作为创作工具，而企业则用它进行产品可视化和营销素材制作。',
-          '随着这项技术的持续发展，它引发了关于真实性、版权和创造力本质的重要问题。世界各地的研究人员正在研究人们如何与AI生成的视觉内容互动和感知。',
+          'AI生成的图像现已广泛应用于广告、娱乐、教育和艺术等领域。一些艺术家将AI作为创作工具，而企业则用它进行产品可视化和营销素材制作。'
         ],
       },
     ],
@@ -419,14 +416,14 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
     sections: [
       {
         paragraphs: [
-          '研究发现了几种有效的策略来区分AI生成的图像和真实照片。在本节中，我们将介绍三种关键策略，帮助您识别AI生成的内容。请仔细阅读每种策略并研究所提供的示例。',
+          '在本节中，我们将介绍三种关键策略，帮助您区分AI生成和人类生成的图像。请仔细阅读每种策略并研究所提供的示例。',
         ],
       },
       {
         heading: '策略一：检查人体解剖细节',
         paragraphs: [
-          'AI系统在生成准确的人体结构方面常常存在困难，特别是手和手指。常见问题包括：手指数量不正确、手指长度或位置不自然、手指融合或合并，以及物理上不可能的手部姿势。',
-          '除了手部，还要注意其他解剖不一致之处，如不对称的面部特征、异常的耳朵形状、看起来过于整齐或不规则的牙齿，以及头发向皮肤过渡不自然等。',
+          'AI系统在生成准确的人体结构方面常常存在困难，以手部为例的常见问题包括：<strong>手指数量不正确、手指长度或位置不自然、手指融合或合并，以及物理上不可能的手部姿势</strong>。',
+          '除了手部，还要注意其他解剖不一致之处，如<strong>不对称的面部特征、异常的耳朵形状、看起来过于整齐或不规则的牙齿，以及头发向皮肤过渡不自然等。 </strong>',
         ],
         images: [
           {
@@ -437,24 +434,25 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
         ],
       },
       {
-        heading: '策略二：检查画风和纹理一致性',
+        heading: '策略二：检查风格和纹理',
         paragraphs: [
-          'AI生成的图像有时会表现出不一致的纹理或过度光滑、类似塑料的质感。注意纹理突然变化的区域、表面看起来过于完美或过于光滑的地方，以及仔细检查时变形或不连贯的图案。',
-          '注意图像的整体"感觉"。AI图像有时具有一种不自然的光滑度或人工光泽，与真实照片中的自然缺陷不同。',
+          'AI生成的图像有时会表现出<strong>不一致的纹理或过度光滑、类似塑料的质感</strong>。注意纹理突然变化的区域、表面看起来过于完美或过于光滑的地方，以及仔细检查时变形或不连贯的图案。',
+          '注意图像的<strong>整体"感觉"</strong>。AI图像有时具有一种<strong>不自然的光滑度或光泽</strong>，与真实照片中的自然缺陷不同。',
         ],
         images: [
           {
             src: '/images/intervention/style.png',
-            alt: 'AI生成图像中的纹理不一致示例',
+            alt: 'AI生成图像中的风格示例',
             caption: '比较不同区域的纹理质量——AI图像通常显示出不一致的细节水平。',
           },
         ],
       },
       {
-        heading: '策略三：利用反向图片搜索（外部知识）',
+        heading: '策略三：利用外部知识',
         paragraphs: [
-          '反向图片搜索是判断图像真伪的有力工具。通过将图片提交给搜索引擎（如Google Lens），您可以查看该图像在互联网上是否有已知来源。如果搜索结果指向AI艺术平台（如Midjourney社区、ArtStation、Civitai等），该图像很可能是AI生成的。',
-          '相反，如果搜索结果指向新闻网站、图库（Shutterstock、Getty Images）或摄影师作品集，则更可能是真实照片。在本实验中，您可以通过右键点击（电脑）或长按（手机）图片来使用模拟的Google Lens搜索功能。',
+          '反向图片搜索是判断图像真伪的有力工具。通过<strong>将图片提交给搜索引擎</strong>，您可以查看该图像在互联网上是否有已知来源。如果搜索结果指向AI艺术平台（如Midjourney社区、ArtStation、Civitai等），该图像很可能是AI生成的。',
+          '相反，如果搜索结果指向新闻网站、图库（Shutterstock、Getty Images）或明确署名的摄影师、画师，则更可能是真实照片。',
+          '在本实验中，您可以通过<strong>右键点击（电脑）或长按（手机）</strong>图片来使用模拟的Google Lens搜索功能。',
         ],
         images: [
           {
@@ -567,15 +565,11 @@ const POST_TEST_QUESTIONS_ZH: QuestionDef[] = [
   },
   {
     id: 'manipulation_check_strategies',
-    type: 'checkbox',
-    label: '您还记得材料中提到的哪些策略？（可多选）',
+    type: 'radio',
+    label: '材料中是否提到了"检查风格与纹理"这一策略？',
     options: [
-      { value: 'anatomy', label: '人体解剖细节（手、手指等）' },
-      { value: 'texture', label: '画风/纹理不一致' },
-      { value: 'reverse_search', label: '反向图片搜索（外部知识）' },
-      { value: 'lighting', label: '光线不一致' },
-      { value: 'background', label: '背景模糊模式' },
-      { value: 'none', label: '我不记得任何策略' },
+      { value: 'yes', label: '是' },
+      { value: 'no', label: '否' },
     ],
     required: true,
     conditionalGroups: ['C'] as Group[],
@@ -640,15 +634,11 @@ const POST_TEST_QUESTIONS_EN: QuestionDef[] = [
   },
   {
     id: 'manipulation_check_strategies',
-    type: 'checkbox',
-    label: 'Which strategies do you remember from the material? (Select all that apply)',
+    type: 'radio',
+    label: 'Did the material mention the strategy of "checking art style and texture"?',
     options: [
-      { value: 'anatomy', label: 'Human anatomical details (hands, fingers, etc.)' },
-      { value: 'texture', label: 'Art style / texture inconsistencies' },
-      { value: 'reverse_search', label: 'Reverse image search (external knowledge)' },
-      { value: 'lighting', label: 'Lighting inconsistencies' },
-      { value: 'background', label: 'Background blur patterns' },
-      { value: 'none', label: "I don't remember any" },
+      { value: 'yes', label: 'Yes' },
+      { value: 'no', label: 'No' },
     ],
     required: true,
     conditionalGroups: ['C'] as Group[],

@@ -1,0 +1,6 @@
+﻿participant_id,group,age,gender,education,ai_tool_usage,ai_familiarity,self_assessed_ability,ai_exposure_freq,intervention_duration_s,total_duration_s,accuracy,accuracy_ai,accuracy_real,confidence,median_rt_s,manipulation_check_read,strategy_usage_degree,self_performance,attention_check_passed,lens_open_count
+9ceec48a-5c7d-438b-a50a-346fde142298,A,,,,,0,0,,106,169,0.75,0.75,,3.0,18.1935,no,,4,True,0
+7db1f37f-1edf-450d-b5b2-85fa3cd1d4ff,C,,,,,0,0,,101,857,0.725,0.8,0.65,3.05,4.692,yes,4.0,4,True,0
+5f1037e4-1cdd-4dc1-87a1-47020a544a18,B,,,,,0,0,,4,47,1.0,1.0,1.0,5.0,10.737499999999999,no,1.0,5,True,0
+f0493927-c796-4d95-aa02-5f2e5cef869c,C,18-24,female,bachelors,yes,4,5,often,30,86,0.5,1.0,0.0,4.0,12.403,yes,5.0,4,True,2
+f29638f5-9501-4248-945e-e555a6ba371e,A,18-24,female,masters,yes,5,4,very-often,9,96,1.0,1.0,1.0,4.5,20.1315,no,,4,True,2

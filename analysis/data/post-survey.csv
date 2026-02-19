@@ -1,0 +1,6 @@
+_id,participant_id,manipulation_check_read,manipulation_check_strategies,strategy_usage_degree,open_method,self_performance,attention_check_answer,attention_check_passed,submitted_at,__v
+69889c5eced95ea3e7016583,9ceec48a-5c7d-438b-a50a-346fde142298,no,,,11,4,5,true,Sun Feb 08 2026 14:23:26 GMT+0000 (Coordinated Universal Time),0
+698ad165c832dc7bb6969e88,7db1f37f-1edf-450d-b5b2-85fa3cd1d4ff,yes,"anatomy,texture,text",4,33,4,5,true,Tue Feb 10 2026 06:34:13 GMT+0000 (Coordinated Universal Time),0
+698af749c832dc7bb6969ebe,5f1037e4-1cdd-4dc1-87a1-47020a544a18,no,none,1,1,5,5,true,Tue Feb 10 2026 09:15:53 GMT+0000 (Coordinated Universal Time),0
+6995d8b0496437e97e191d7e,f0493927-c796-4d95-aa02-5f2e5cef869c,yes,"anatomy,texture,reverse_search",5,,4,5,true,Wed Feb 18 2026 15:20:16 GMT+0000 (Coordinated Universal Time),0
+69971fe5e2e062339e1c3505,f29638f5-9501-4248-945e-e555a6ba371e,no,,,,4,5,true,Thu Feb 19 2026 14:36:21 GMT+0000 (Coordinated Universal Time),0
