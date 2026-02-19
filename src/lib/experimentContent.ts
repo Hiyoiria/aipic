@@ -427,7 +427,7 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/anatomy.png',
+            src: '/images/intervention/anatomy.webp',
             alt: 'AI生成图像中的解剖异常示例',
             caption: '注意不规则的手指数量和不自然的手部姿势——这些是AI生成的常见迹象。',
           },
@@ -441,7 +441,7 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/style.png',
+            src: '/images/intervention/style.webp',
             alt: 'AI生成图像中的风格示例',
             caption: '比较不同区域的纹理质量——AI图像通常显示出不一致的细节水平。',
           },
@@ -456,7 +456,7 @@ const INTERVENTION_CONTENT_ZH: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/knowledge.png',
+            src: '/images/intervention/knowledge.webp',
             alt: '反向图片搜索示例',
             caption: '右键点击图片并选择"使用Google搜索图片"，通过搜索结果来源判断图片真伪。',
           },
@@ -502,7 +502,7 @@ const INTERVENTION_CONTENT_EN: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/anatomy.png',
+            src: '/images/intervention/anatomy.webp',
             alt: 'Example of anatomical anomalies in AI-generated images',
             caption: 'Notice the irregular finger count and unnatural hand positioning — common signs of AI generation.',
           },
@@ -516,7 +516,7 @@ const INTERVENTION_CONTENT_EN: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/style.png',
+            src: '/images/intervention/style.webp',
             alt: 'Example of texture inconsistencies in AI-generated images',
             caption: 'Compare the texture quality across different areas — AI images often show inconsistent detail levels.',
           },
@@ -530,7 +530,7 @@ const INTERVENTION_CONTENT_EN: Record<'A' | 'C', InterventionContent> = {
         ],
         images: [
           {
-            src: '/images/intervention/knowledge.png',
+            src: '/images/intervention/knowledge.webp',
             alt: 'Reverse image search example',
             caption: 'Right-click on an image and select "Search image with Google" to check the source of the image through search results.',
           },

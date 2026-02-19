@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef, useCallback, useEffect } from 'react';
 import { useExperiment } from '@/contexts/ExperimentContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { getInterventionContent } from '@/lib/experimentContent';
@@ -14,6 +14,20 @@ export default function InterventionPage() {
   const [timerDone, setTimerDone] = useState(false);
   const [loading, setLoading] = useState(false);
   const startTimeRef = useRef(Date.now());
+
+  // 利用用户阅读干预材料的时间，在后台预加载所有任务图片
+  useEffect(() => {
+    if (!state.imageSeed) return;
+    fetch(`/api/images?seed=${state.imageSeed}`)
+      .then((res) => res.json())
+      .then((images: Array<{ thumbPath: string }>) => {
+        images.forEach((img) => {
+          const el = new Image();
+          el.src = img.thumbPath;
+        });
+      })
+      .catch(() => {/* 预加载失败不影响主流程 */});
+  }, [state.imageSeed]);
 
   const allContent = getInterventionContent(language);
   const content = state.group ? allContent[state.group] : null;
@@ -62,7 +76,7 @@ export default function InterventionPage() {
             <h2 className="text-lg font-semibold text-gray-800 mb-3">{section.heading}</h2>
           )}
           {section.paragraphs.map((paragraph, pIdx) => (
-            <p key={pIdx} className="text-gray-600 mb-4 leading-relaxed"
+            <p key={pIdx} className="text-gray-600 mb-4 leading-relaxed [&_strong]:text-red-600 [&_strong]:font-bold"
               dangerouslySetInnerHTML={{ __html: paragraph }}
             />
           ))}
@@ -76,6 +90,8 @@ export default function InterventionPage() {
                     alt={img.alt}
                     className="w-full sm:w-auto mx-auto rounded-lg border border-gray-200 shadow-sm"
                     style={{ maxWidth: '100%', height: 'auto' }}
+                    loading="eager"
+                    fetchPriority="high"
                   />
                   {img.caption && (
                     <figcaption className="text-xs sm:text-sm text-gray-500 mt-2 italic px-2">

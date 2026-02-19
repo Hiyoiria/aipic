@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(du -sh:*)",
+      "Bash(xargs:*)",
+      "Bash(sort:*)",
+      "Bash(python3:*)",
+      "Bash(node scripts/compress-images.mjs:*)"
+    ]
+  }
+}
