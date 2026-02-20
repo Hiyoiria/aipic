@@ -15,15 +15,21 @@ export const EXPERIMENT_CONFIG = {
   interventionMinStaySeconds: 3,
 
   /**
-   * 图像判断任务展示的图片总数
-   * Total number of images shown in the judgment task
-   *
-   * - 必须为偶数（AI:Real = 1:1）
-   * - 如果小于图片池总数(40)，将随机抽取，保证AI和Real各一半
-   * - 如果等于图片池总数，则使用全部图片
-   * - 最大不超过图片池总数（目前为40: 20AI + 20Real）
+   * 图像判断任务展示的图片总数（fixedImageIds 为 null 时生效）
    */
-  totalImages: 2,
+  totalImages: 24,
+
+  /**
+   * 固定使用的图片 ID 列表（设为 null 则退回到 totalImages 随机抽取模式）
+   */
+  fixedImageIds: [
+    // AI (12张)
+    'ai_01', 'ai_02', 'ai_04', 'ai_06', 'ai_08', 'ai_09',
+    'ai_11', 'ai_13', 'ai_15', 'ai_16', 'ai_18', 'ai_19',
+    // Real (12张)
+    'real_01', 'real_02', 'real_03', 'real_04', 'real_05', 'real_06',
+    'real_11', 'real_12', 'real_14', 'real_15', 'real_16', 'real_20',
+  ] as string[] | null,
 };
 
 /**

@@ -13,12 +13,16 @@ export async function GET(request: NextRequest) {
     );
   }
 
-  const totalNeeded = EXPERIMENT_CONFIG.totalImages;
-
-  // If configured count is less than total pool, subsample with 1:1 AI:Real ratio
-  const pool = totalNeeded < IMAGE_DATA.length
-    ? subsampleImages([...IMAGE_DATA], totalNeeded, seed)
-    : [...IMAGE_DATA];
+  let pool;
+  if (EXPERIMENT_CONFIG.fixedImageIds) {
+    const idSet = new Set(EXPERIMENT_CONFIG.fixedImageIds);
+    pool = IMAGE_DATA.filter(img => idSet.has(img.id));
+  } else {
+    const totalNeeded = EXPERIMENT_CONFIG.totalImages;
+    pool = totalNeeded < IMAGE_DATA.length
+      ? subsampleImages([...IMAGE_DATA], totalNeeded, seed)
+      : [...IMAGE_DATA];
+  }
 
   const shuffled = shuffleImages(pool, seed);
 
