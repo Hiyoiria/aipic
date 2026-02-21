@@ -3,7 +3,7 @@
 """
 Step 1: 从实验服务器下载所有数据到本地 CSV
 运行方式:
-    python analysis/fetch_data.py --url https://your-app.zeabur.app --secret your-admin-secret
+    python analysis/fetch_data.py --url https://picquiz.zeabur.app --secret study2-admin-2024
 """
 
 import argparse
@@ -28,7 +28,7 @@ def fetch_collection(base_url, secret, collection):
         return False
     filepath = os.path.join(OUTPUT_DIR, f"{collection}.csv")
     with open(filepath, 'w', encoding='utf-8', newline='') as f:
-        f.write(resp.text)
+        f.write(resp.content.decode('utf-8'))
     lines = resp.text.strip().count('\n')
     print(f"OK ({lines} rows) -> {filepath}")
     return True

@@ -5,7 +5,8 @@
       "Bash(xargs:*)",
       "Bash(sort:*)",
       "Bash(python3:*)",
-      "Bash(node scripts/compress-images.mjs:*)"
+      "Bash(node scripts/compress-images.mjs:*)",
+      "Bash(python:*)"
     ]
   }
 }

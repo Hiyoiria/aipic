@@ -4,3 +4,18 @@ _id,participant_id,manipulation_check_read,manipulation_check_strategies,strateg
 698af749c832dc7bb6969ebe,5f1037e4-1cdd-4dc1-87a1-47020a544a18,no,none,1,1,5,5,true,Tue Feb 10 2026 09:15:53 GMT+0000 (Coordinated Universal Time),0
 6995d8b0496437e97e191d7e,f0493927-c796-4d95-aa02-5f2e5cef869c,yes,"anatomy,texture,reverse_search",5,,4,5,true,Wed Feb 18 2026 15:20:16 GMT+0000 (Coordinated Universal Time),0
 69971fe5e2e062339e1c3505,f29638f5-9501-4248-945e-e555a6ba371e,no,,,,4,5,true,Thu Feb 19 2026 14:36:21 GMT+0000 (Coordinated Universal Time),0
+699748da967703d1f60361f0,c42eb56b-306b-4aa9-a0e5-80ee6035e356,no,,,,5,5,true,Thu Feb 19 2026 17:31:06 GMT+0000 (Coordinated Universal Time),0
+6997e117b827d9ae2c1018a7,92a2c47d-11ff-40b1-8dd2-40ed5ad57c74,no,,,,4,3,false,Fri Feb 20 2026 04:20:39 GMT+0000 (Coordinated Universal Time),0
+6997e5f7b827d9ae2c101924,e2e07f1d-8179-4412-945a-b10e3aea8e2a,yes,yes,5,,3,5,true,Fri Feb 20 2026 04:41:27 GMT+0000 (Coordinated Universal Time),0
+6997eb65b827d9ae2c10195c,56dc546a-a002-4cab-a548-8d8c8a24ca70,no,,,背景细节 光影 是否特别标准,5,5,true,Fri Feb 20 2026 05:04:37 GMT+0000 (Coordinated Universal Time),0
+6997ed26b827d9ae2c10198b,982acd14-8270-4768-8d63-abe8bd5315ba,yes,yes,3,,4,5,true,Fri Feb 20 2026 05:12:06 GMT+0000 (Coordinated Universal Time),0
+6997f354b827d9ae2c1019c5,157cab83-abab-46ff-9516-917037893b60,no,,,,3,5,true,Fri Feb 20 2026 05:38:28 GMT+0000 (Coordinated Universal Time),0
+699877fdb827d9ae2c101b0e,70d96c86-c17b-45aa-9c25-d845eecf5473,yes,yes,5,搜索,3,5,true,Fri Feb 20 2026 15:04:29 GMT+0000 (Coordinated Universal Time),0
+6998af11b827d9ae2c101b89,871a04a1-d2e3-48a9-96dc-fdf93b7634bd,yes,,,靠感觉,2,5,true,Fri Feb 20 2026 18:59:29 GMT+0000 (Coordinated Universal Time),0
+6998cb64b827d9ae2c101be9,7bdd05f3-157f-460a-9fa7-78218f38e94a,yes,yes,4,,2,5,true,Fri Feb 20 2026 21:00:20 GMT+0000 (Coordinated Universal Time),0
+69994f0eb827d9ae2c101c23,c8404013-34b4-433d-97d6-511b017b51c2,no,,,直觉,2,5,true,Sat Feb 21 2026 06:22:06 GMT+0000 (Coordinated Universal Time),0
+6999a953b827d9ae2c101d97,dc165136-ff71-4ab3-8e4b-5afe4edf0d1b,yes,yes,5,使用Google搜索，还有常识,4,5,true,Sat Feb 21 2026 12:47:15 GMT+0000 (Coordinated Universal Time),0
+6999b163b827d9ae2c101e49,3186a99e-25c2-42bb-94a6-4ef2758e4c99,no,no,1,肉眼观察,4,5,true,Sat Feb 21 2026 13:21:39 GMT+0000 (Coordinated Universal Time),0
+6999b2bfb827d9ae2c101e8b,72616102-b106-4168-a359-c28aeddf3d46,no,,,hmm,3,5,true,Sat Feb 21 2026 13:27:27 GMT+0000 (Coordinated Universal Time),0
+6999b509b827d9ae2c101e98,ff15d97a-a13c-4097-8220-1796eca4971f,not_sure,,,肉眼,4,5,true,Sat Feb 21 2026 13:37:13 GMT+0000 (Coordinated Universal Time),0
+6999b8feb827d9ae2c101ed2,8fe7bbf2-49ec-4bd7-bf6f-3466f6e514dd,no,,,,2,5,true,Sat Feb 21 2026 13:54:06 GMT+0000 (Coordinated Universal Time),0

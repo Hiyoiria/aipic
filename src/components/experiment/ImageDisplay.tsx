@@ -170,7 +170,7 @@ export default function ImageDisplay({
 
       {/* Zoom modal */}
       {zoomed && (
-        <ImageZoomModal src={fullSrc} alt={alt} onClose={() => setZoomed(false)} />
+        <ImageZoomModal src={thumbSrc} alt={alt} onClose={() => setZoomed(false)} />
       )}
 
       {/* Fake context menu */}
