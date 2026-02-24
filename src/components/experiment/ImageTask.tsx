@@ -7,7 +7,7 @@ import { useResponseTimer } from '@/hooks/useResponseTimer';
 import { useImagePreloader } from '@/hooks/useImagePreloader';
 import ImageDisplay from './ImageDisplay';
 import ProgressBar from './ProgressBar';
-import LikertScale from '@/components/ui/LikertScale';
+import TextArea from '@/components/ui/TextArea';
 import Button from '@/components/ui/Button';
 import type { ImageType } from '@/types';
 
@@ -17,7 +17,7 @@ export default function ImageTask() {
   const { startTimer, stopTimer, resetTimer } = useResponseTimer();
 
   const [judgment, setJudgment] = useState<ImageType | ''>('');
-  const [confidence, setConfidence] = useState(0);
+  const [reasoning, setReasoning] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -44,7 +44,7 @@ export default function ImageTask() {
     startTimer();
   }, [startTimer]);
 
-  const canProceed = judgment !== '' && confidence > 0;
+  const canProceed = judgment !== '';
 
   const handleNext = async () => {
     if (!canProceed || !currentImage || !state.participantId) return;
@@ -59,7 +59,7 @@ export default function ImageTask() {
       judgment: judgment as ImageType,
       correct_answer: currentImage.correct_answer,
       is_correct: judgment === currentImage.correct_answer,
-      confidence,
+      reasoning,
       response_time_ms: responseTimeMs,
     };
 
@@ -84,7 +84,7 @@ export default function ImageTask() {
       } else {
         advanceImage();
         setJudgment('');
-        setConfidence(0);
+        setReasoning('');
         setImageLoaded(false);
         resetTimer();
       }
@@ -158,15 +158,13 @@ export default function ImageTask() {
             </div>
           </fieldset>
 
-          <LikertScale
-            label={t('task.confidence')}
-            name="confidence"
-            value={confidence}
-            onChange={setConfidence}
-            min={t('task.confidenceMin')}
-            max={t('task.confidenceMax')}
-            count={5}
-            required
+          <TextArea
+            label={t('task.reasoning')}
+            name="reasoning"
+            value={reasoning}
+            onChange={setReasoning}
+            placeholder={t('task.reasoningPlaceholder')}
+            maxLength={200}
           />
 
           <div className="flex justify-end pt-4">

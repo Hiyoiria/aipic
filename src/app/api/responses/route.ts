@@ -13,8 +13,6 @@ export async function POST(request: NextRequest) {
       image_id,
       image_order,
       judgment,
-      confidence,
-      strategy_type,
       reasoning,
       response_time_ms,
     } = body;
@@ -38,8 +36,6 @@ export async function POST(request: NextRequest) {
       judgment,
       correct_answer,
       is_correct,
-      confidence,
-      strategy_type: strategy_type || '',
       reasoning: reasoning || '',
       response_time_ms,
     });
