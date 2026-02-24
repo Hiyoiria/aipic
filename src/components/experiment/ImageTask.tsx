@@ -8,9 +8,8 @@ import { useImagePreloader } from '@/hooks/useImagePreloader';
 import ImageDisplay from './ImageDisplay';
 import ProgressBar from './ProgressBar';
 import LikertScale from '@/components/ui/LikertScale';
-import TextArea from '@/components/ui/TextArea';
 import Button from '@/components/ui/Button';
-import type { ImageType, StrategyType } from '@/types';
+import type { ImageType } from '@/types';
 
 export default function ImageTask() {
   const { state, setImageList, advanceImage, addResponse, advancePhase } = useExperiment();
@@ -19,8 +18,6 @@ export default function ImageTask() {
 
   const [judgment, setJudgment] = useState<ImageType | ''>('');
   const [confidence, setConfidence] = useState(0);
-  const [strategyType, setStrategyType] = useState<StrategyType>('');
-  const [reasoning, setReasoning] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -63,8 +60,6 @@ export default function ImageTask() {
       correct_answer: currentImage.correct_answer,
       is_correct: judgment === currentImage.correct_answer,
       confidence,
-      strategy_type: strategyType,
-      reasoning,
       response_time_ms: responseTimeMs,
     };
 
@@ -90,8 +85,6 @@ export default function ImageTask() {
         advanceImage();
         setJudgment('');
         setConfidence(0);
-        setStrategyType('');
-        setReasoning('');
         setImageLoaded(false);
         resetTimer();
       }
@@ -174,52 +167,6 @@ export default function ImageTask() {
             max={t('task.confidenceMax')}
             count={5}
             required
-          />
-
-          <fieldset>
-            <legend className="text-sm font-medium text-gray-700 mb-2">
-              {t('task.strategyLabel')}
-            </legend>
-            <div className="flex flex-wrap gap-2">
-              {(
-                [
-                  ['Style', t('task.strategyStyle')],
-                  ['Anatomy', t('task.strategyAnatomy')],
-                  ['Knowledge', t('task.strategyKnowledge')],
-                  ['Intuition', t('task.strategyIntuition')],
-                ] as const
-              ).map(([value, label]) => (
-                <label
-                  key={value}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full border cursor-pointer text-sm transition-all ${
-                    strategyType === value
-                      ? 'border-blue-500 bg-blue-50 text-blue-700 font-medium'
-                      : 'border-gray-300 text-gray-600 hover:bg-gray-50'
-                  }`}
-                >
-                  <input
-                    type="radio"
-                    name="strategyType"
-                    value={value}
-                    checked={strategyType === value}
-                    onChange={() =>
-                      setStrategyType(strategyType === value ? '' : value)
-                    }
-                    className="sr-only"
-                  />
-                  {label}
-                </label>
-              ))}
-            </div>
-          </fieldset>
-
-          <TextArea
-            label={t('task.reasoning')}
-            name="reasoning"
-            value={reasoning}
-            onChange={setReasoning}
-            placeholder={t('task.reasoningPlaceholder')}
-            maxLength={200}
           />
 
           <div className="flex justify-end pt-4">
