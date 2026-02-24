@@ -39,6 +39,8 @@ export interface ImageMeta {
 }
 
 // ===== Response =====
+export type StrategyType = 'Style' | 'Anatomy' | 'Knowledge' | 'Intuition' | '';
+
 export interface ResponseData {
   participant_id: string;
   image_id: string;
@@ -47,6 +49,7 @@ export interface ResponseData {
   correct_answer: ImageType;
   is_correct: boolean;
   confidence: number;
+  strategy_type?: StrategyType;  // per-image strategy self-report
   reasoning?: string;
   response_time_ms: number;
 }

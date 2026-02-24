@@ -8,6 +8,7 @@ export interface IResponse extends Document {
   correct_answer: 'AI' | 'Real';
   is_correct: boolean;
   confidence: number;
+  strategy_type?: string;  // per-image strategy self-report
   reasoning?: string;
   response_time_ms: number;
   submitted_at: Date;
@@ -21,6 +22,11 @@ const ResponseSchema = new Schema<IResponse>({
   correct_answer: { type: String, enum: ['AI', 'Real'], required: true },
   is_correct: { type: Boolean, required: true },
   confidence: { type: Number, required: true, min: 1, max: 5 },
+  strategy_type: {
+    type: String,
+    enum: ['Style', 'Anatomy', 'Knowledge', 'Intuition', ''],
+    default: '',
+  },
   reasoning: { type: String, default: '' },
   response_time_ms: { type: Number, required: true },
   submitted_at: { type: Date, default: Date.now },

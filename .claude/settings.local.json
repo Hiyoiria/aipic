@@ -6,7 +6,11 @@
       "Bash(sort:*)",
       "Bash(python3:*)",
       "Bash(node scripts/compress-images.mjs:*)",
-      "Bash(python:*)"
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(wc:*)",
+      "Bash(ls:*)",
+      "Read(//c/Users/t-yimengwu/Desktop/study2/**)"
     ]
   }
 }

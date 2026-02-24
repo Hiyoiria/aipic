@@ -18,6 +18,7 @@ export default function EndPage() {
 
     const experimentStartTime = state.experimentStartTime || Date.now();
     const totalDurationS = Math.round((Date.now() - experimentStartTime) / 1000);
+    // accuracyScore computed for DB record only, not displayed to participant
     const accuracyScore = totalCount > 0 ? correctCount / totalCount : 0;
 
     fetch(`/api/participants/${state.participantId}`, {
@@ -66,15 +67,7 @@ export default function EndPage() {
         </p>
       </div>
 
-      {totalCount > 0 && (
-        <div className="bg-gray-50 rounded-lg p-6">
-          <h2 className="text-lg font-semibold text-gray-800 mb-2">{t('end.results')}</h2>
-          <p className="text-3xl font-bold text-blue-600 mb-1">
-            {correctCount} / {totalCount}
-          </p>
-          <p className="text-gray-500">{t('end.correct')}</p>
-        </div>
-      )}
+      {/* 不展示逐图正确率反馈，避免影响参与者判断偏差 */}
     </div>
   );
 }

@@ -17,15 +17,18 @@ export const EXPERIMENT_CONFIG = {
   /**
    * 图像判断任务展示的图片总数（fixedImageIds 为 null 时生效）
    */
-  totalImages: 24,
+  totalImages: 21,
 
   /**
    * 固定使用的图片 ID 列表（设为 null 则退回到 totalImages 随机抽取模式）
+   *
+   * 已移除正确率 >90% 的图像（基于预实验19人数据）：
+   *   ai_06 (94.7%)、ai_11 (94.7%)、ai_18 (100%)
    */
   fixedImageIds: [
-    // AI (12张)
-    'ai_01', 'ai_02', 'ai_04', 'ai_06', 'ai_08', 'ai_09',
-    'ai_11', 'ai_13', 'ai_15', 'ai_16', 'ai_18', 'ai_19',
+    // AI (9张，移除 ai_06 / ai_11 / ai_18)
+    'ai_01', 'ai_02', 'ai_04', 'ai_08', 'ai_09',
+    'ai_13', 'ai_15', 'ai_16', 'ai_19',
     // Real (12张)
     'real_01', 'real_02', 'real_03', 'real_04', 'real_05', 'real_06',
     'real_11', 'real_12', 'real_14', 'real_15', 'real_16', 'real_20',
