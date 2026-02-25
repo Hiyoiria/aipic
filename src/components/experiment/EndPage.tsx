@@ -67,7 +67,12 @@ export default function EndPage() {
         </p>
       </div>
 
-      {/* 不展示逐图正确率反馈，避免影响参与者判断偏差 */}
+      <div className="bg-gray-50 rounded-lg p-4 mb-6 inline-block">
+        <p className="text-lg font-semibold text-gray-800">
+          {correctCount} / {totalCount}
+        </p>
+        <p className="text-sm text-gray-500">{t('end.correct')}</p>
+      </div>
     </div>
   );
 }
