@@ -10,6 +10,7 @@ import argparse
 import os
 import sys
 import requests
+import pandas as pd
 
 sys.stdout.reconfigure(encoding='utf-8')
 
@@ -34,6 +35,37 @@ def fetch_collection(base_url, secret, collection):
     return True
 
 
+def update_combined():
+    """合并真实数据 + 合成数据 → *_combined.csv，fetch 后自动调用。"""
+    pairs = [
+        ('participants', 'participants_combined.csv'),
+        ('responses',    'responses_combined.csv'),
+        ('post-survey',  'post-survey_combined.csv'),
+        ('interaction-logs', 'interaction-logs_combined.csv'),
+    ]
+    print("\nUpdating combined CSVs...")
+    for base, combined_name in pairs:
+        real_path  = os.path.join(OUTPUT_DIR, f'{base}.csv')
+        synth_path = os.path.join(OUTPUT_DIR, f'{base}_synth.csv')
+        out_path   = os.path.join(OUTPUT_DIR, combined_name)
+
+        if not os.path.exists(real_path):
+            print(f"  SKIP {combined_name} (real file missing)")
+            continue
+        if not os.path.exists(synth_path):
+            print(f"  SKIP {combined_name} (synth file missing, run synthesize_data.py first)")
+            continue
+
+        real  = pd.read_csv(real_path)
+        synth = pd.read_csv(synth_path)
+        combined = pd.concat([real, synth], ignore_index=True)
+        try:
+            combined.to_csv(out_path, index=False, encoding='utf-8-sig')
+            print(f"  OK {combined_name} ({len(real)} real + {len(synth)} synth = {len(combined)} rows)")
+        except PermissionError:
+            print(f"  WARN {combined_name} is open in another program, skipped")
+
+
 def main():
     parser = argparse.ArgumentParser(description='Download experiment data')
     parser.add_argument('--url', required=True, help='Base URL of the experiment app')
@@ -49,6 +81,7 @@ def main():
             success += 1
 
     print(f"\nDone: {success}/{len(COLLECTIONS)} collections downloaded to {OUTPUT_DIR}/")
+    update_combined()
 
 
 if __name__ == '__main__':
