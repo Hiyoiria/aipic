@@ -11,7 +11,8 @@
       "Bash(wc:*)",
       "Bash(ls:*)",
       "Read(//c/Users/t-yimengwu/Desktop/study2/**)",
-      "Bash(iconv -f utf-8 -t utf-8)"
+      "Bash(iconv -f utf-8 -t utf-8)",
+      "Bash(grep -rn \"final_data\" analysis/*.py)"
     ]
   }
 }
